@@ -1,0 +1,63 @@
+@use '../helpers' as *;
+
+.theme-switcher {
+  --padding: 2px;
+  --iconWrapperWidth: #{fluid-to-laptop(42, 35)};
+  --iconWrapperHeight: 28px;
+  --iconSize: 20px;
+
+
+  &__body {
+    display: flex;
+    align-items: center;
+    padding: var(--padding);
+    position: relative;
+
+    &::after {
+      background-color: var(--color-light-gray);
+      border-radius: var(--border-radius-l);
+      content: "";
+      height: var(--iconWrapperWidth);
+      left: 2px;
+      position: absolute;
+      top: 50%;
+      transform: translate3d(0, -50%, 0);
+      width: var(--iconWrapperWidth);
+      will-change: transform;
+      transition-duration: var(--transition-duration-longer);
+
+      html.is-dark-theme & {
+        background-color: var(--color-dark-gray);
+        left: 0;
+        transform: translate3d(calc(var(--iconWrapperWidth) + var(--padding)), -50%, 0);
+      }
+    }
+  }
+
+  &__icon-wrapper {
+    align-items: center;
+    display: flex;
+    height: var(--iconWrapperWidth);
+    justify-content: center;
+    position: relative;
+    width: var(--iconWrapperWidth);
+    z-index: 1;
+  }
+  .i-icon {
+    --color: var(--color-dark);
+    --size: 25px;
+    align-items: center;
+    display: inline-flex;
+    height: var(--size);
+    justify-content: center;
+    width: var(--size);
+
+    & path {
+      // Change fill color when the parent has the is-dark-theme class
+      html.is-dark-theme & {
+        fill: var(--color-light);
+      }
+    }
+  }
+}
+

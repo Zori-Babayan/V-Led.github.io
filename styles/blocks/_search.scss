@@ -1,0 +1,35 @@
+@use '../helpers' as *;
+
+.search {
+  position: relative;
+
+  &__input {
+    position: relative;
+    max-width: 240px;
+    padding: 6px 20px;
+    border-radius: var(--border-radius-l);
+    border: none;
+    background: var(--color-light-gray);
+
+    @include laptop {
+      max-width: fluid-to-laptop(270, 150);
+    }
+
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: none;
+
+    & svg {
+      color: var(--color-gray);
+    }
+  }
+}
+

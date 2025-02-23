@@ -1,0 +1,17 @@
+@use 'normalize';
+@use 'fonts';
+@use 'variables';
+@use 'utils';
+@use 'globals';
+
+@use "blocks/icon";
+@use "blocks/logo";
+@use "blocks/button";
+@use "blocks/button-burger";
+@use "blocks/header";
+@use "blocks/location";
+@use "blocks/promo-menu";
+@use "blocks/header-slider";
+@use "blocks/search";
+@use "blocks/nav-swiper";
+@use "blocks/footer";

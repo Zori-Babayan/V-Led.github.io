@@ -1,0 +1,63 @@
+@use '../helpers' as *;
+
+.info{
+  & .icon {
+    display: inline-flex;
+    align-items: center;
+    column-gap: fluid-to-laptop(10, 5);
+
+    &::before {
+      --size: #{24px};
+
+      @include square(var(--size));
+
+      content: '';
+      flex-shrink: 0;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      @include laptop {
+        --size: #{20px};
+      }
+    }
+
+
+    &--phone {
+      &::before {
+        background-image: url("/icons/phone.svg");
+      }
+    }
+
+    &--email {
+      &::before {
+        background-image: url("/icons/email.svg");
+      }
+    }
+    &--whatsApp {
+      &::before {
+        background-image: url("/icons/whatsApp.svg");
+      }
+    }
+    &--position {
+      &::before {
+        background-image: url("/icons/position.svg");
+      }
+    }
+    &--openingHours {
+      &::before {
+        background-image: url("/icons/openingHours.svg");
+      }
+    }
+    &--control {
+      &::before {
+        background-image: url("/icons/control.svg");
+      }
+    }
+    &--copyrighting {
+      &::before {
+        background-image: url("/icons/copyrighting.svg");
+      }
+    }
+  }
+}

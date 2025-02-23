@@ -1,0 +1,16 @@
+@use '../helpers' as *;
+
+.logo {
+  width: fluid-to-laptop(278, 200);
+  @include hover {
+    color: var(--color-accent) !important;
+  }
+  color: var(--color-dark);
+  html.is-dark-theme & {
+    color: var(--color-light);
+  }
+
+  @include tablet{
+    margin-right: auto;
+  }
+}
