@@ -7,7 +7,11 @@
 
   &__wrapper {
     width: fluid(1920, 390);
-    max-width: 1800px;
+    max-width: calc(var(--100vw) - 3%);
+
+    @include laptop{
+      max-width: calc(var(--100vw) - 1%);
+    }
   }
 }
 
@@ -33,7 +37,13 @@
     display: flex;
     align-items: center;
     text-transform: uppercase;
+
+    &.swiper-slide {
+      width: max-content !important;
+      height: auto;
+    }
   }
+
 }
 
 @media screen and (max-width: 767.9px) {
@@ -135,11 +145,6 @@
  * Slider Item
  */
 
-.swiper-slide {
-  width: max-content !important;
-  height: auto;
-
-}
 
 @keyframes btn-arrow-move {
   0% {

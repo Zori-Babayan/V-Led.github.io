@@ -1,4 +1,5 @@
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+
 document.addEventListener("DOMContentLoaded", () => {
     const sliders = document.querySelectorAll(".header-slider");
 
@@ -24,16 +25,30 @@ document.addEventListener("DOMContentLoaded", () => {
                 watchSlidesProgress: true,
                 /*centeredSlides: true,*/
                 initialSlide: 1,
-                navigation: { nextEl, prevEl, disabledClass: "disabled" },
-             /*   pagination: {
-                    el: pagination,
-                    type: "bullets",
-                    modifierClass: "slider-pagination",
-                    bulletClass: "slider-pagination__item",
-                    bulletActiveClass: "active",
-                    clickable: true
-                }*/
+                navigation: {nextEl, prevEl, disabledClass: "disabled"},
+                /*   pagination: {
+                       el: pagination,
+                       type: "bullets",
+                       modifierClass: "slider-pagination",
+                       bulletClass: "slider-pagination__item",
+                       bulletActiveClass: "active",
+                       clickable: true
+                   }*/
             })
         );
+    });
+
+    new Swiper(".hero-swiper", {
+        pagination: {
+            el: ".pagination",
+            clickable: true,
+        },
+        allowTouchMove: false,
+        navigation: {
+            nextEl: ".button-next",
+            prevEl: ".button-prev",
+        },
+        effect: "fade",
+        loop: true,
     });
 });

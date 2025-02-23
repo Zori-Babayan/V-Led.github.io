@@ -73,7 +73,7 @@
   &::after {
     position: absolute;
     width: calc(
-            (100vw - var(--container-width)) / 2
+            (var(--100vw) - var(--container-width)) / 2
     );
     height: 1px;
     background-color: var(--color-gray-88);
@@ -82,7 +82,7 @@
   &--bottom {
     &::after {
       content: '';
-      width: 100vw;
+      width: var(--100vw);
       bottom: 0;
     }
   }
