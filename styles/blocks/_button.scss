@@ -1,1 +1,16 @@
 @use '../helpers' as *;
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  padding: 20px 52px;
+  border: var(--border);
+  white-space: nowrap;
+  border-radius: var(--border-radius-l);
+
+  @include hover{
+    color: var(--color-light);
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+}

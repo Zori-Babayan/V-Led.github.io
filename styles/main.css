@@ -236,7 +236,7 @@ svg * {
   --color-gray-88: #888888;
   --color-text: var(--color-dark);
   --color-bg: var(--color-light);
-  --color-accent: #8142D6;
+  --color-accent: #005e83;
   --border: 2px solid var(--color-dark);
   --border-width-s: 1px solid var(--color-light);
   --border-radius-l: 5px;
@@ -358,6 +358,13 @@ body {
 
 html.is-lock {
   overflow: hidden;
+}
+html .color-light * {
+  color: var(--color-light);
+  border-color: var(--color-light);
+}
+html .color-dark * {
+  color: var(--color-dark);
 }
 
 body {
@@ -529,6 +536,29 @@ html.is-dark-theme .logo {
   }
 }
 
+.button {
+  display: inline-flex;
+  justify-content: center;
+  padding: 20px 52px;
+  border: var(--border);
+  white-space: nowrap;
+  border-radius: var(--border-radius-l);
+}
+@media (any-hover: hover) {
+  .button:hover {
+    color: var(--color-light);
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+}
+@media (any-hover: none) {
+  .button:active {
+    color: var(--color-light);
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+}
+
 .burger-button {
   display: inline-flex;
   justify-content: center;
@@ -637,7 +667,7 @@ html.is-dark-theme .burger-button .burger-button__line {
 .header__body--list.callback {
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 10px 20px;
 }
 .header__body--list.actions {
   font-size: clamp(0.75rem, 0.5rem + 0.3125vw, 0.875rem);
@@ -675,10 +705,14 @@ html.is-dark-theme .burger-button .burger-button__line {
   color: var(--color-text);
 }
 
+.promo-menu {
+  margin-left: auto;
+  margin-right: clamp(0.625rem, -0.625rem + 1.5625vw, 1.25rem);
+}
 .promo-menu--list {
   font-size: clamp(0.8125rem, 0.7647058824rem + 0.1960784314vw, 1rem);
   display: flex;
-  column-gap: clamp(0.625rem, -1.875rem + 3.125vw, 1.875rem);
+  column-gap: clamp(0.3125rem, -2.8125rem + 3.90625vw, 1.875rem);
   color: var(--color-text);
 }
 
@@ -1131,18 +1165,37 @@ html.is-dark-theme .theme-switcher .i-icon path {
 }
 .hero__swiper-wrapper-super {
   position: absolute;
-  bottom: 88px;
-  left: 40px;
-  color: hsl(var(--color-text));
-  font-size: 44px;
-  font-weight: 600;
-  line-height: normal;
+  top: 50%;
+  translate: 0 -50%;
+  left: var(--container-padding-x);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  row-gap: 30px;
+  max-width: 715px;
   z-index: 3;
   transition-delay: 0.2s;
+  text-transform: uppercase;
 }
-.hero__swiper-wrapper .nav-carousel {
+@media (width > 1440px) {
+  .hero__swiper-wrapper-super {
+    right: calc(var(--100vw) / 2);
+  }
+}
+@media (width <= 767px) {
+  .hero__swiper-wrapper-super {
+    max-width: -webkit-fill-available;
+  }
+}
+.hero__swiper-description {
+  font-weight: 400;
+}
+
+.nav-carousel {
   position: absolute;
-  bottom: 40px;
+  bottom: 30px;
+  left: 48%;
+  translate: -50% -50%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -1150,23 +1203,42 @@ html.is-dark-theme .theme-switcher .i-icon path {
   transform: scale(1);
   z-index: 3;
 }
-.hero__swiper-wrapper .nav-carousel .pagination {
-  width: auto;
+@media (width <= 767px) {
+  .nav-carousel {
+    bottom: 10px;
+  }
 }
-.hero__swiper-wrapper .nav-carousel .pagination > .swiper-pagination-bullet {
+.nav-carousel .pagination {
+  width: max-content !important;
+}
+.nav-carousel .pagination > .swiper-pagination-bullet {
   width: 20px;
   height: 10px;
   background-color: var(--color-dark);
   border-radius: var(--border-radius-m);
+  outline: var(--border-width-s);
   transition: all 0.3s ease-in-out;
 }
-.hero__swiper-wrapper .nav-carousel .pagination > .swiper-pagination-bullet-active {
+@media (width <= 767px) {
+  .nav-carousel .pagination > .swiper-pagination-bullet {
+    width: 55px;
+    height: 25px;
+  }
+}
+.nav-carousel .pagination > .swiper-pagination-bullet-active {
   background-color: var(--color-light);
   width: 30px;
   border-radius: var(--border-radius-m);
 }
-.hero__swiper-wrapper .nav-carousel .pagination > .swiper-pagination-bullet:hover, .hero__swiper-wrapper .nav-carousel .pagination > .swiper-pagination-bullet-active:hover {
+@media (width <= 767px) {
+  .nav-carousel .pagination > .swiper-pagination-bullet-active {
+    width: 80px;
+    height: 35px;
+  }
+}
+.nav-carousel .pagination > .swiper-pagination-bullet:hover, .nav-carousel .pagination > .swiper-pagination-bullet-active:hover {
   background-color: var(--color-accent);
+  outline-color: var(--color-accent);
 }
 
 /*# sourceMappingURL=main.css.map */

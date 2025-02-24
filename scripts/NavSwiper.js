@@ -44,11 +44,16 @@ document.addEventListener("DOMContentLoaded", () => {
             clickable: true,
         },
         allowTouchMove: false,
+        centeredSlides: true,
         navigation: {
             nextEl: ".button-next",
             prevEl: ".button-prev",
         },
         effect: "fade",
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
         loop: true,
     });
 });
