@@ -141,12 +141,5 @@
         height: 35px;
       }
     }
-
-    &:hover,
-    &-active {
-      &:hover{
-      outline-color: var(--color-light-gray);
-      }
-    }
   }
 }

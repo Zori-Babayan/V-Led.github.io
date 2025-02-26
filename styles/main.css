@@ -395,33 +395,33 @@ h6, .h6 {
 }
 
 h1, .h1 {
-  font-size: clamp(1.75rem, 1.5588235294rem + 0.7843137255vw, 2.5rem);
+  font-size: clamp(1.75rem, 1.4950980392rem + 1.045751634vw, 2.75rem);
   font-weight: 600;
 }
 
 h2, .h2 {
-  font-size: clamp(1.375rem, 1.0245098039rem + 1.4379084967vw, 2.75rem);
+  font-size: clamp(1.375rem, 1.0882352941rem + 1.1764705882vw, 2.5rem);
   font-weight: 600;
 }
 
 h3, .h3 {
-  font-size: clamp(1.25rem, 0.9632352941rem + 1.1764705882vw, 2.375rem);
-  font-weight: 600;
+  font-size: clamp(1.25rem, 1.0588235294rem + 0.7843137255vw, 2rem);
+  font-weight: 500;
 }
 
 h4, .h4 {
   font-size: clamp(1.125rem, 1.0294117647rem + 0.3921568627vw, 1.5rem);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h5, .h5 {
-  font-size: clamp(1.125rem, 1.0612745098rem + 0.2614379085vw, 1.375rem);
-  font-weight: 600;
+  font-size: clamp(1rem, 0.9681372549rem + 0.1307189542vw, 1.125rem);
+  font-weight: 500;
 }
 
 h6, .h6 {
-  font-size: clamp(1rem, 0.9362745098rem + 0.2614379085vw, 1.25rem);
-  font-weight: 600;
+  font-size: clamp(0.875rem, 0.8431372549rem + 0.1307189542vw, 1rem);
+  font-weight: 500;
 }
 
 a,
@@ -1265,9 +1265,6 @@ html.is-dark-theme .theme-switcher .i-icon path {
     height: 35px;
   }
 }
-.nav-carousel .pagination > .swiper-pagination-bullet:hover:hover, .nav-carousel .pagination > .swiper-pagination-bullet-active:hover {
-  outline-color: var(--color-light-gray);
-}
 
 .bordered-grid {
   --columns: 1;
@@ -1347,6 +1344,7 @@ html.is-dark-theme .theme-switcher .i-icon path {
   padding: 25px;
   transition-duration: var(--transition-duration);
   color: var(--color-light);
+  line-height: normal;
 }
 @media (any-hover: hover) {
   .category-card__title:hover {
@@ -1381,6 +1379,33 @@ html.is-dark-theme .theme-switcher .i-icon path {
 .section__link {
   color: var(--color-text);
   font-weight: 500;
+}
+
+.about {
+  display: grid;
+  row-gap: 25px;
+}
+.about__section {
+  background-color: var(--color-light-gray);
+}
+.about__preview {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+}
+.about__title {
+  font-weight: 500;
+}
+.about__image {
+  width: 100%;
+  height: clamp(10.5625rem, 6.4522058824rem + 16.862745098vw, 26.6875rem);
+  object-fit: cover;
+}
+@media (width > 1023px) {
+  .about {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 55px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

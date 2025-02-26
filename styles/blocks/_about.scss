@@ -1,0 +1,31 @@
+@use '../helpers' as *;
+
+.about {
+  display: grid;
+  row-gap: 25px;
+
+  &__section {
+    background-color: var(--color-light-gray);
+  }
+
+  &__preview {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+  }
+
+  &__title {
+    font-weight: 500;
+  }
+
+  &__image {
+    width: 100%;
+    height: fluid(427, 169);
+    object-fit: cover;
+  }
+
+  @include tablet-above {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 55px;
+  }
+}

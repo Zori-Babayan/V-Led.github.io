@@ -35,6 +35,7 @@
     padding: 25px;
     transition-duration: var(--transition-duration);
     color: var(--color-light);
+    line-height: normal;
 
     @include hover {
       color: var(--color-accent);
