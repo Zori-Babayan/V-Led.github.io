@@ -11,6 +11,7 @@
   &__preview {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     row-gap: 25px;
   }
 
@@ -20,8 +21,10 @@
 
   &__image {
     width: 100%;
-    height: fluid(427, 169);
     object-fit: cover;
+    @include tablet{
+      height: fluid(570, 169);
+    }
   }
 
   @include tablet-above {

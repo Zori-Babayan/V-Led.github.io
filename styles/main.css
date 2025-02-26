@@ -1391,6 +1391,7 @@ html.is-dark-theme .theme-switcher .i-icon path {
 .about__preview {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   row-gap: 25px;
 }
 .about__title {
@@ -1398,8 +1399,12 @@ html.is-dark-theme .theme-switcher .i-icon path {
 }
 .about__image {
   width: 100%;
-  height: clamp(10.5625rem, 6.4522058824rem + 16.862745098vw, 26.6875rem);
   object-fit: cover;
+}
+@media (width <= 1023px) {
+  .about__image {
+    height: clamp(10.5625rem, 4.1740196078rem + 26.2091503268vw, 35.625rem);
+  }
 }
 @media (width > 1023px) {
   .about {
