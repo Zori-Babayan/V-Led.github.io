@@ -39,6 +39,10 @@ html.is-dark-theme{
   --color-text: var(--color-light);
   --color-bg: var(--color-dark);
 
+  .about__section{
+    background-color: var(--color-bg);
+  }
+
   .header-slider,
   .catalog-section{
     background-color: var(--color-dark-gray);

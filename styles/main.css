@@ -254,6 +254,9 @@ html.is-dark-theme {
   --color-text: var(--color-light);
   --color-bg: var(--color-dark);
 }
+html.is-dark-theme .about__section {
+  background-color: var(--color-bg);
+}
 html.is-dark-theme .header-slider,
 html.is-dark-theme .catalog-section {
   background-color: var(--color-dark-gray);
