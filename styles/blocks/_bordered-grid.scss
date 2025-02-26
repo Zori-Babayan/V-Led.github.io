@@ -1,0 +1,64 @@
+@use '../helpers' as *;
+
+.bordered-grid {
+  --columns: 1;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  &__item {
+
+  }
+
+  &--4-cols {
+    --columns: 4;
+    gap: 30px;
+    overflow: auto;
+
+    /*
+        @include tablet {
+          --columns: 3;
+        }
+        @include mobile {
+          --columns: 2;
+        }
+        @include mobile-s {
+          --columns: 1;
+        }*/
+  }
+
+
+  &__svg {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    padding-right: 5px;
+
+    .arrow {
+      animation: 1s linear 0s infinite blink;
+    }
+
+    .arrow-second {
+      animation-delay: 0.25s;
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+  }
+}
+

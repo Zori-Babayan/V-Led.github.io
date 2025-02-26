@@ -84,6 +84,8 @@
 
       @include mobile {
         max-width: -webkit-fill-available;
+        max-width: -moz-available;
+        max-width: fill-available;
       }
     }
 
@@ -141,9 +143,10 @@
     }
 
     &:hover,
-    &-active:hover {
-      background-color: var(--color-accent);
-      outline-color: var(--color-accent);
+    &-active {
+      &:hover{
+      outline-color: var(--color-light-gray);
+      }
     }
   }
 }

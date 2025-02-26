@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   padding-block: 30px;
+  background-color: var(--color-light-gray);
 
   &__wrapper {
     width: fluid(1920, 390);

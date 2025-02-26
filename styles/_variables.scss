@@ -12,7 +12,7 @@
   --color-text: var(--color-dark);
   --color-bg: var(--color-light);
 
-  --color-accent: #005e83;
+  --color-accent: #999999;
 
 
   --border: 2px solid var(--color-dark);
@@ -38,6 +38,11 @@
 html.is-dark-theme{
   --color-text: var(--color-light);
   --color-bg: var(--color-dark);
+
+  .header-slider,
+  .catalog-section{
+    background-color: var(--color-dark-gray);
+  }
 }
 body{
   color: var(--color-text);

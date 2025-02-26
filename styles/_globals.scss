@@ -123,3 +123,13 @@ a {
   @include focus-visible;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent, #ccc);
+  border-radius: 5px;
+  border: 1px solid var(--color-light);
+}

@@ -1,0 +1,29 @@
+@use '../helpers' as *;
+
+.section {
+  padding-block: 75px;
+
+  &__body {
+    position: relative;
+  }
+
+  &__header {
+    padding-bottom: 40px;
+
+    &--inner {
+      display: grid;
+      align-items: center;
+      gap: 10px;
+
+      @include mobile-s-above {
+        grid-template-columns: 1fr auto;
+      }
+
+    }
+  }
+
+  &__link {
+    color: var(--color-text);
+    font-weight: 500;
+  }
+}
