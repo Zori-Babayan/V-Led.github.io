@@ -1,7 +1,20 @@
+$laptop1920:   1920px;
 $laptop:   1440px;
 $tablet:   1023px;
 $mobile:   767px;
 $mobile-s: 480px;
+
+@mixin laptop1920-above {
+  @media (width > $laptop1920) {
+    @content;
+  }
+}
+
+@mixin laptop1920{
+  @media (width <= $laptop1920) {
+    @content;
+  }
+}
 
 @mixin laptop-above {
   @media (width > $laptop) {

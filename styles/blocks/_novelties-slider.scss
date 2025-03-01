@@ -1,0 +1,19 @@
+@use '../helpers' as *;
+
+.novelties-slider {
+  padding-inline: 50px;
+  position: relative;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    translate: 0 -50%;
+    z-index: 1;
+    pointer-events: none;
+  }
+}

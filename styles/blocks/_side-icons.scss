@@ -1,0 +1,13 @@
+@use '../helpers' as *;
+
+.side-icons{
+  position: absolute;
+  right: 0;
+  padding: 20px;
+
+  &__wrapper{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+}

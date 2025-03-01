@@ -231,6 +231,7 @@ svg * {
   --color-light: #FFFFFF;
   --color-dark: #1C1D1D;
   --color-light-gray: #ECECEC;
+  --color-light-gray-74: #747474;
   --color-dark-gray: #242424;
   --color-gray: #6C6C6C;
   --color-gray-88: #888888;
@@ -382,6 +383,7 @@ body {
   font-family: var(--font-family), sans-serif;
   color: var(--color-gray);
   background-color: var(--color-bg);
+  overflow-x: hidden;
 }
 
 main {
@@ -682,6 +684,11 @@ html.is-dark-theme .burger-button .burger-button__line {
   align-items: center;
   column-gap: 10px;
   justify-content: space-between;
+}
+@media (width <= 767px) {
+  .header__body-inner {
+    padding-left: 0;
+  }
 }
 @media (width > 1023px) {
   .header__body-inner {
@@ -1384,6 +1391,18 @@ html.is-dark-theme .theme-switcher .i-icon path {
   font-weight: 500;
 }
 
+.novelties__section .section__body {
+  width: clamp(24.375rem, 0rem + 100vw, 120rem);
+  max-width: var(--100vw);
+  margin-inline: 0;
+}
+@media (width > 1920px) {
+  .novelties__section .section__body {
+    max-width: calc(var(--100vw) - 3%);
+    margin-inline: auto;
+  }
+}
+
 .about {
   display: grid;
   row-gap: 25px;
@@ -1414,6 +1433,78 @@ html.is-dark-theme .theme-switcher .i-icon path {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 55px;
   }
+}
+
+.side-icons {
+  position: absolute;
+  right: 0;
+  padding: 20px;
+}
+.side-icons__wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.novelties-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.novelties-card__preview {
+  position: relative;
+}
+.novelties-card__image {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.novelties-card__body {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.novelties-card__subtitle {
+  font-weight: 500;
+}
+.novelties-card__title {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.novelties-card__description {
+  color: var(--color-light-gray-74);
+}
+
+.novelties-slider {
+  padding-inline: 50px;
+  position: relative;
+}
+.novelties-slider__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  translate: 0 -50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.item-action {
+  display: inline-flex;
+}
+.item-action__button {
+  display: inline-flex;
+  padding: 0;
+  border: none;
+  background: none;
+}
+.item-action__button.is-active svg * {
+  fill: red;
+  stroke: red;
 }
 
 /*# sourceMappingURL=main.css.map */

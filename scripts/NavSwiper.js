@@ -1,59 +1,72 @@
-import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+const swiper = new Swiper(".emotions-slider__slider", {
+    slidesPerView: "auto",
+    spaceBetween: 20,
+    speed: 600,
+    observer: true,
+    watchOverflow: true,
+    watchSlidesProgress: true,
+    /*centeredSlides: true,*/
+    initialSlide: 1,
+    navigation: {
+        nextEl: '.emotions_next',
+        prevEl: '.emotions_prev', disabledClass: "disabled"
+    },
+    /*   pagination: {
+    el: pagination,
+        type: "bullets",
+        modifierClass: "slider-pagination",
+        bulletClass: "slider-pagination__item",
+        bulletActiveClass: "active",
+        clickable: true
+    }*/
+});
 
-document.addEventListener("DOMContentLoaded", () => {
-    const sliders = document.querySelectorAll(".header-slider");
+const swiper2 = new Swiper(".hero-swiper", {
+    pagination: {
+        el: ".pagination",
+        clickable: true,
+    },
+    allowTouchMove: false,
+    centeredSlides: true,
+    navigation: {
+        nextEl: ".button-next",
+        prevEl: ".button-prev",
+    },
+    effect: "fade",
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+    loop: true,
+});
 
-    if (!sliders.length) return;
-
-    const list = [];
-
-    sliders.forEach((element) => {
-        const [slider, prevEl, nextEl, pagination] = [
-            element.querySelector(".swiper"),
-            element.querySelector(".slider-nav__item_prev"),
-            element.querySelector(".slider-nav__item_next"),
-            element.querySelector(".slider-pagination")
-        ];
-
-        list.push(
-            new Swiper(slider, {
-                slidesPerView: "auto",
-                spaceBetween: 20,
-                speed: 600,
-                observer: true,
-                watchOverflow: true,
-                watchSlidesProgress: true,
-                /*centeredSlides: true,*/
-                initialSlide: 1,
-                navigation: {nextEl, prevEl, disabledClass: "disabled"},
-                /*   pagination: {
-                       el: pagination,
-                       type: "bullets",
-                       modifierClass: "slider-pagination",
-                       bulletClass: "slider-pagination__item",
-                       bulletActiveClass: "active",
-                       clickable: true
-                   }*/
-            })
-        );
-    });
-
-    new Swiper(".hero-swiper", {
-        pagination: {
-            el: ".pagination",
-            clickable: true,
+const swiper3 = new Swiper(".novelties-slider__slider", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    navigation: {
+        nextEl: '.novelties_next',
+        prevEl: '.novelties_prev', disabledClass: "disabled"
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    breakpoints: {
+        480: {
+            slidesPerView: 2,
+            spaceBetween: 10,
         },
-        allowTouchMove: false,
-        centeredSlides: true,
-        navigation: {
-            nextEl: ".button-next",
-            prevEl: ".button-prev",
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
         },
-        effect: "fade",
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 40,
         },
-        loop: true,
-    });
+        1024: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+        },
+    },
 });

@@ -27,3 +27,18 @@
     font-weight: 500;
   }
 }
+
+.novelties__section {
+  & .section {
+    &__body {
+      width: fluid(1920, 390);
+      max-width: var(--100vw);
+      margin-inline: 0;
+
+      @include laptop1920-above {
+        max-width: calc(var(--100vw) - 3%);
+        margin-inline: auto;
+      }
+    }
+  }
+}

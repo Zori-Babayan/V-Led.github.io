@@ -1,0 +1,19 @@
+@use '../helpers' as *;
+
+.item-action {
+  display: inline-flex;
+
+  &__button {
+    display: inline-flex;
+    padding: 0;
+    border: none;
+    background: none;
+
+    &.is-active {
+      svg * {
+        fill: red;
+        stroke: red;
+      }
+    }
+  }
+}

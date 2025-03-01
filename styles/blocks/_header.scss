@@ -44,6 +44,10 @@
       column-gap: 10px;
       justify-content: space-between;
 
+      @include mobile{
+        padding-left: 0;
+      }
+
       @include tablet-above {
         padding-bottom: 20px;
       }

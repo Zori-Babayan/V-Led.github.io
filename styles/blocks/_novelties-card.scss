@@ -1,0 +1,37 @@
+@use '../helpers' as *;
+
+.novelties-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  &__preview {
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  &__subtitle {
+    font-weight: 500;
+  }
+
+  &__title {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  &__description {
+    color: var(--color-light-gray-74);
+  }
+}
