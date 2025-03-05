@@ -70,3 +70,34 @@ const swiper3 = new Swiper(".novelties-slider__slider", {
         },
     },
 });
+
+const news = new Swiper(".news-slider__slider", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    navigation: {
+        nextEl: '.news_next',
+        prevEl: '.news_prev', disabledClass: "disabled"
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    breakpoints: {
+        480: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+        },
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+        },
+        1024: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+        },
+    },
+});

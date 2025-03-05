@@ -6,6 +6,7 @@
 
   --color-light-gray: #ECECEC;
   --color-light-gray-74: #747474;
+  --color-light-gray-DE: #DEDEDE;
   --color-dark-gray: #242424;
   --color-gray: #6C6C6C;
   --color-gray-88: #888888;
@@ -16,7 +17,7 @@
   --color-accent: #999999;
 
 
-  --border: 2px solid var(--color-dark);
+  --border: 1px solid var(--color-light-gray-DE);
   --border-width-s: 1px solid var(--color-light);
 
   --border-radius-l: 5px;
@@ -36,20 +37,24 @@
 
 }
 
-html.is-dark-theme{
+html.is-dark-theme {
   --color-text: var(--color-light);
   --color-bg: var(--color-dark);
 
-  .about__section{
+  .about__section,
+  .sales__section{
     background-color: var(--color-bg);
   }
 
   .header-slider,
-  .catalog-section{
+  .catalog-section,
+  .novelties__section,
+  .news__section{
     background-color: var(--color-dark-gray);
   }
 }
-body{
+
+body {
   color: var(--color-text);
   background-color: var(--color-bg);
 }

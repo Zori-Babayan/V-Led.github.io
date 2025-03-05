@@ -1,0 +1,21 @@
+@use '../helpers' as *;
+
+.sales-grid {
+  --columns: 1;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  &__item{
+
+  }
+  &--2-cols {
+    --columns: 2;
+    gap: 30px;
+    overflow: auto;
+
+    @include mobile{
+      gap: 25px;
+    }
+  }
+}

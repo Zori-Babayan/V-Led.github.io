@@ -1,0 +1,73 @@
+@use '../helpers' as *;
+
+.sales-card {
+  position: relative;
+
+
+  @include tablet {
+    width: max-content;
+  }
+
+  @include mobile {
+    width: 90vw;
+  }
+  @include mobile-s {
+    width: 80vw;
+  }
+
+  &__image {
+    width: 100%;
+    min-height: 247px;
+    object-fit: cover;
+    border-radius: var(--border-radius-l);
+
+    @include laptop{
+      height: 260px;
+    }
+
+    @include mobile {
+      height: 270px;
+    }
+
+    @include mobile-s {
+      height: 300px;
+    }
+  }
+
+  &__body {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    row-gap: 15px;
+    padding: fluid-to-laptop(35, 25);
+    color: var(--color-light);
+  }
+
+  &__title {
+    font-weight: 700;
+    color: inherit;
+  }
+
+  &__description {
+    margin-bottom: 5px;
+  }
+
+  &__actions {}
+
+  &__details {
+    &-link{
+      font-weight:  500;
+      padding: fluid-to-laptop(20, 10) fluid-to-laptop(52, 40);
+      border-color: var(--color-light);
+
+      @include hover {
+        color: var(--color-dark);
+        background-color: var(--color-light);
+        border-color: var(--color-light);
+      }
+    }
+  }
+}
