@@ -62,6 +62,7 @@
       font-weight:  500;
       padding: fluid-to-laptop(20, 10) fluid-to-laptop(52, 40);
       border-color: var(--color-light);
+      border: var(--border-light);
 
       @include hover {
         color: var(--color-dark);

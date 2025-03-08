@@ -7,7 +7,11 @@
   background-color: var(--color-light);
   border: 0;
   border-radius: 6px;
+  z-index: +999;
 
+  &__wrapper {
+    @include square(60px);
+  }
   html.is-dark-theme & {
     background-color: var(--color-dark);
     & .burger-button__line{
@@ -28,6 +32,8 @@
   }
 
   &.is-active {
+    position: absolute;
+    translate: 91vw;
     .burger-button__line {
       stroke-dasharray: 90 207;
       stroke-dashoffset: -134;
